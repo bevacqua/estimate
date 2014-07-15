@@ -1,6 +1,6 @@
 /**
  * estimate - Calculate remaining reading time estimates in real-time
- * @version v0.1.2
+ * @version v0.1.3
  * @link https://github.com/bevacqua/estimate
  * @license MIT
  */
