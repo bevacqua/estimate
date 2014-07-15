@@ -1,16 +1,16 @@
 'use strict';
 
+var browserify = require('browserify');
 var gulp = require('gulp');
 var bump = require('gulp-bump');
-var git = require('gulp-git');
 var clean = require('gulp-clean');
-var rename = require('gulp-rename');
+var git = require('gulp-git');
 var header = require('gulp-header');
-var uglify = require('gulp-uglify');
-var browserify = require('browserify');
-var streamify = require('gulp-streamify');
-var source = require('vinyl-source-stream');
+var rename = require('gulp-rename');
 var size = require('gulp-size');
+var streamify = require('gulp-streamify');
+var uglify = require('gulp-uglify');
+var source = require('vinyl-source-stream');
 
 var extended = [
   '/**',
@@ -32,12 +32,12 @@ gulp.task('clean', function () {
 gulp.task('build', ['clean', 'bump'], function () {
   var pkg = require('./package.json');
 
-  return browserify('./src/measly.js')
-    .bundle({ debug: true, standalone: 'measly' })
-    .pipe(source('measly.js'))
+  return browserify('./src/estimate.js')
+    .bundle({ debug: true, standalone: 'estimate' })
+    .pipe(source('estimate.js'))
     .pipe(streamify(header(extended, { pkg : pkg } )))
     .pipe(gulp.dest('./dist'))
-    .pipe(streamify(rename('measly.min.js')))
+    .pipe(streamify(rename('estimate.min.js')))
     .pipe(streamify(uglify()))
     .pipe(streamify(header(succint, { pkg : pkg } )))
     .pipe(streamify(size()))
@@ -52,7 +52,7 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('tag', ['build', 'styles'], function (done) {
+gulp.task('tag', ['build'], function (done) {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
