@@ -21,6 +21,7 @@ Estimates the reading time in seconds for a piece of text to be read completely.
 ```js
 estimate.text('........');
 // <- 3
+```
 
 ## `.element(elem)`
 
