@@ -53,9 +53,10 @@ Call it through `requestAnimationFrame` to update the estimate. Updates `calc.pr
 ```js
 var calc = estimate.element(document.body);
 
-requestAnimationFrame(function () {
+requestAnimationFrame(function refresh () {
   calc.update();
-  console.log(calc.progress);
+  time.innerText = calc.remaining;
+  requestAnimationFrame(refresh);
 });
 ```
 
