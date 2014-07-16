@@ -2,6 +2,8 @@
 
 > Get remaining reading time estimates in real-time
 
+**[Live Demo][1]**
+
 # Install
 
 ```shell
@@ -66,3 +68,5 @@ Re-initialize the calculator whenever the text changes. Updates `calc.total`.
 # License
 
 MIT
+
+[1]: http://bevacqua.github.io/estimate/
