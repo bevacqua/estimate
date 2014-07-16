@@ -17,8 +17,8 @@ function resolveOptions (options) {
 
 function measureText (text, options) {
   var o = resolveOptions(options);
-  var words = text.split(spaces).length;
-  var seconds = Math.round(words / speed / 60);
+  var words = text.split(o.spaces).length;
+  var seconds = Math.round(words / o.speed * 60);
   return seconds;
 }
 
@@ -40,17 +40,17 @@ function measureElement (element, options) {
   function getProgress () {
     var scroll = scrolltop();
     var rect = element.getBoundingClientRect();
-    var diffTop = scroll - rect.top;
-    var diffHeight = rect.height - window.innerHeight;
+    var diffTop = scroll - element.offsetTop + window.innerHeight / 2;
+    var diffHeight = rect.height;
     var scaled = diffTop / diffHeight * 100;
-    var bounded = Math.max(0, Math.min(calc.progress, 100));
+    var bounded = Math.max(0, Math.min(scaled, 100));
     return bounded; // progress bounded within 0..100
   }
 
   initialize();
   update();
 
-  return state;
+  return calc;
 }
 
 module.exports = {

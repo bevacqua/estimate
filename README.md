@@ -61,6 +61,8 @@ requestAnimationFrame(function () {
 
 Re-initialize the calculator whenever the text changes. Updates `calc.total`.
 
+**Caveat:** At any given point, half of the height in the viewport is considered read.
+
 # License
 
 MIT

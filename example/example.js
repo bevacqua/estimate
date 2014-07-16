@@ -1,3 +1,11 @@
+var calc = estimate.element(pad);
 
-var text = pad.innerText;
-time.innerText = estimate.getMinutes(text);
+requestAnimationFrame(function re () {
+  console.clear();
+  console.log(calc.total, calc.remaining, calc.progress);
+
+  calc.update();
+  remaining.innerText = calc.remaining;
+  requestAnimationFrame(re);
+});
+
