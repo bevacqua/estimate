@@ -29,7 +29,7 @@ function measureElement (element, options) {
   };
 
   function initialize () {
-    calc.total = measureText(element.innerText, options);
+    calc.total = measureText(element.innerText || element.textContent, options);
   }
 
   function update () {
