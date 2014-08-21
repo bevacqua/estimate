@@ -8,6 +8,7 @@
     "email": "ng@bevacqua.io",
     "url": "http://bevacqua.io"
   },
+  "main": "src/estimate.js",
   "license": "MIT",
   "repository": {
     "type": "git",
