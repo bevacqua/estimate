@@ -2,7 +2,7 @@
 
 var scrolltop = require('scrolltop');
 var defaults = {
-  speed: 150, // words per minute
+  speed: 300, // words per minute
   spaces: /\W+/g
 };
 

@@ -1,7 +1,7 @@
 {
   "name": "estimate",
   "description": "Calculate remaining reading time estimates in real-time",
-  "version": "0.1.22",
+  "version": "1.0.0",
   "homepage": "https://github.com/bevacqua/estimate",
   "author": {
     "name": "Nicolas Bevacqua",
